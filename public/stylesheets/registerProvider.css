@@ -1,0 +1,111 @@
+body, h3, p, label {
+    margin: 0;
+    padding: 0;
+    font-size: 16px; 
+  }
+  
+  .main-container {
+    display: flex;
+    /* height: 85vh; */
+  }
+  
+  .image-container {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #fff;
+  }
+  
+  .image-container img {
+    max-height: 77%;
+    max-width: 95%;
+    border-radius: 20px; 
+    transition: transform 0.3s ease;
+  }
+  
+  .image-container:hover img {
+    transform: scale(1.05);
+  }
+  
+  .form-container {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-image: url('../images/bg-image.jpg'); 
+    background-size: cover;
+    background-position: center;
+    padding: 40px;
+    box-sizing: border-box;
+    /* height: 88vh; */
+  }
+  .form-container>h2{
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+  }
+  
+  .registration-form{
+    /* text-align: center; */
+  }
+  
+  .registration-form div {
+    margin: 15px 0;
+  }
+  
+  .registration-form label {
+    display: block;
+    text-align: left;
+    font-size: 1rem;
+  }
+  
+  .registration-form input {
+
+    padding: 12px;
+    width: 100%;
+    border: 1px solid #ccc;
+    font-size: 1rem;
+  }
+  .registration-form #option{
+    padding: 12px;
+    width: 100%;
+    border: 1px solid #ccc;
+    font-size: 1rem;
+    /* background-color: red; */
+  }
+  
+  button {
+    background-color: #13b783;
+    color: #fff;
+    padding: 14px 24px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    border-radius: 4px;
+    width: 100%;
+    margin-top: 5px;
+    margin-bottom: 15px;
+    font-size: 1rem;
+  }
+  
+  button:hover {
+    background-color: #10aa79;
+  }
+  
+ 
+  
+  /* Media queries for responsiveness */
+  @media (max-width: 768px) {
+    .main-container {
+      flex-direction: column;
+      height: auto;
+    }
+  
+    .image-container,
+    .form-container {
+      flex: none;
+      height: auto;
+    }
+  }
+

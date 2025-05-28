@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="/stylesheets/nav.css">
+    <link rel="stylesheet" href="/stylesheets/style.css">
+    <link rel="stylesheet" href="/stylesheets/footer.css">
+    <link rel="stylesheet" href="/stylesheets/showFoodAtStation.css">
+
+</head>
+
+<body>
+
+  <header class="header">
+        <img src="/images/shyama.-removebg-preview.png" alt="image" class="logo">
+          <ul class="main-nav">
+            <li><a href="/"><i class="ri-arrow-left-fill"></i></a></li>
+            <li><a href="/">Home</a></li>
+            <li><a href="#footer-container" >Contact</a></li>
+          </ul>
+    
+          <ul class="burgger">
+            <li><a href="/">Home</a></li>
+            <li><a href="#footer-container" >Contact</a></li>
+          </ul>
+          <i id="menu-toggle" class="ri-menu-fold-line"></i>
+  </header>
+
+ <div class="show-food">
+
+  <div class="top_home">
+    <h1><span>Food </span> Ordering</h1>
+    <input type="text" class="search-bar" placeholder="Search for your favorite food...">
+  </div>
+  <section>
+    <div class="categories">
+        <div class="category">
+            <img src="/images/burger.jpeg" alt="Burgers">
+            <h2>Burgers</h2>
+        </div>
+        <div class="category">
+            <img src="/images/pizza.jpg" alt="Pizza">
+            <h2>Pizza</h2>
+        </div>
+        <div class="category">
+            <img src="/images/sushi.webp" alt="Sushi">
+            <h2>Sushi</h2>
+        </div>
+        <div class="category">
+          <img src="/images/momose.png" alt="momose">
+          <h2>Momose</h2>
+        </div>
+        <div class="category">
+          <img src="/images/Indian thali.webp" alt="Indian Thali">
+          <h2>Indian Thali</h2>
+        </div>
+        <div class="category">
+          <img src="/images/salad.jpg" alt="salad">
+          <h2>Salad</h2>
+        </div>
+        <!-- Add more categories as needed -->
+    </div>
+  </section>
+
+  <div class="cart-section">
+    <% if(items.length > 0){ %>
+     <% for(var i = 0; i< items[0].length; i++){ %>
+       <form action="/shop_choose/<%= items[0][i]._id %>" method="post">
+        <div class="container">
+      
+          <img src="/upload/<%=items[0][i].Image%>" alt="">
+    
+        <div class="content-box">
+          <h3><%= items[0][i].item_Name  %></h3>
+          <p><%= items[0][i].description %></p>
+          <p><%= items[0][i]._id %></p>
+          <div class="btn">
+            <h4 class="price">Rs - <%= items[0][i].price %></h4>
+            <button type="submit">Order Now</button>
+          </div>
+        </div>
+       </div>
+       </form>
+     <%}} else {%>
+      <h1>Item not found in this location</h1>
+    <%}%>
+  
+  </div>
+  
+ </div>
+  
+<%- include ('footer/footer.ejs') -%>
+</body>
+</html>

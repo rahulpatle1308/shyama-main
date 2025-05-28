@@ -1,0 +1,57 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Choose Lounge</title>
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="stylesheets/chooseLounge.css">
+    <link rel="stylesheet" href="stylesheets/nav.css">
+</head>
+<body>
+
+  <header class="header">
+    <a href="/">
+      <img src="/images/shyama.-removebg-preview.png" alt="image" class="logo">
+    </a>
+    <!-- <nav class="navbar"> -->
+      <ul class="main-nav">
+        <!-- <li><a href="/"><i class="ri-arrow-left-fill"></i></a></li> -->
+        <li><a href="/">Home</a></li>
+        <li><a href="#footer-container" >Contact</a></li>
+      </ul>
+
+      <ul class="burgger">
+        <li><a href="/">Home</a></li>
+        <li><a href="#footer-container" >Contact</a></li>
+      </ul>
+      <i id="menu-toggle" class="ri-menu-fold-line"></i>
+
+  </header>
+
+  <div id="main">
+        <h1>Registered Lounges in Station</h1>
+        <ul class="lounge-list">
+        <% for(var i = 0; i < lounges.length; i++){ %>
+
+         <li class="lounge-item">
+               
+                <div class="lounge-details">
+                    <img src="/upload/<%= lounges[i].loungeImage %>" alt="Loading">
+                    <h1><%= lounges[i].loungeName %></h1>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                    <p class="seats">Number of seats in lounge - <%= lounges[i].noOfSeats %></p>
+                    <a href="/chooseLaunge/<%= lounges[i]._id %>">Book Now</a>
+                </div>
+         </li>
+        <% } %> 
+        </ul>
+  </div>
+
+  <%- include ('footer/footer.ejs') -%>
+  <script src="\javascripts\nav.js"></script>
+    
+</body>
+</html> 
